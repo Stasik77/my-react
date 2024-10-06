@@ -1,13 +1,14 @@
 import React from "react";
 
 export function Accordion(props: any) {
-    return(
+    return (
         <div>
             <AccordionTitle title={props.title}/>
-            <AccordionBody />
+            <AccordionBody/>
         </div>
     )
 }
+
 function AccordionTitle(props: any) {
     console.log("AccordionTitle rendering")
     return (
@@ -17,13 +18,16 @@ function AccordionTitle(props: any) {
 
 function AccordionBody() {
     console.log("AccordionBody rendering")
-    return(
+    return (
         <ul>
             <li>1</li>
             <li>2</li>
             <li>3</li>
 
+            <h2>  lor1000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000lor10000v0 </h2>
+
 
         </ul>
     )
 }
+
