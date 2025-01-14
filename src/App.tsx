@@ -1,34 +1,49 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Accordion} from "./components/Accordion/Accordion";
-import {Raiting} from "./components/Raiting";  //<<< с Помощью AS  можено переименовать Компоненту{Raiting as R}
+import {Accordion, AccordionTitlePropsType} from './components/Accordion/Accordion';
+import {Raiting, RatingValueType} from './components/Raiting';
+import {OnOff} from "./components/OnOff";
+import {UncontrolledAccordion} from "./components/UnontrolerAccordion/UncontrolledAccordion";
+import {UncontrolledRaiting} from "./components/UncontrolledRaiting";
+import {UncontrolOnOff} from './components/UncontrolOnOff';  //<<< с Помощью AS  можено переименовать Компоненту{Raiting as R}
 
 
 function App() {
 
+    let [raitingValue, setRaitingValue] = useState<RatingValueType>(5)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    let [switchon, setswitchon] = useState<boolean>(false)
+    
     return (
-        <>
-            <PageTitle title={"This is App"}/>
-            <PageTitle title={"Users"}/>
-            Article1
-            <Raiting value={3} />
-            <Accordion title={"menu"} />
-            <Accordion title={"menu2"}/>
-            Article2
-            <Raiting value={0}/>
-            <Raiting value={1}/>
-            <Raiting value={2}/>
-            <Raiting value={3}/>
-            <Raiting value={4}/>
-            <Raiting value={5}/>
+        <div className={"App"}>
 
-        </>
+            {/*<UncontrolledAccordion collapsed titleValue={"--menu--"}/>*/}
+            {/*<UncontrolledAccordion  collapsed titleValue={"--user--"}/>*/}
+            {/*<Raiting value={raitingValue} onClick={setRaitingValue}/>*/}
+            {/*<UncontrolledRaiting/>*/}
+            {/*<Raiting value={2}/>*/}
+            {/*<Raiting value={3}/>*/}
+            {/*<Raiting value={4}/>*/}
+            {/*<Raiting value={5}/>*/}
+            {/*<Accordion titleValue={"menu"}*/}
+            {/*           collapsed={accordionCollapsed}*/}
+            {/*           onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}/>*/}
+            {/*<Accordion titleValue={"user"} collapsed={false}/>*/}
+            {/*<OnOff on/>*/}
+            {/*<OnOff on/>*/}
+            {/*<OnOff on/>*/}
+            {/*<OnOff on={false}/>*/}
+            {/*<OnOff on={switchon} onChange={(on)=>{setswitchon(on)}}/>*/}
+            <UncontrolOnOff onChange={setswitchon} /> {switchon.toString()}
+        </div>
 
     );
 }
+type PageTitlePropsType = {
+    title: string;
+}
 
-
-function PageTitle(props: any) {
+function PageTitle(props: PageTitlePropsType) {
     debugger
     return (
         <h2>{props.title}</h2>
