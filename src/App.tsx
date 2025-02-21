@@ -19,22 +19,22 @@ function App() {
 
             {/*<UncontrolledAccordion collapsed titleValue={"--menu--"}/>*/}
             {/*<UncontrolledAccordion  collapsed titleValue={"--user--"}/>*/}
-            {/*<Raiting value={raitingValue} onClick={setRaitingValue}/>*/}
-            {/*<UncontrolledRaiting/>*/}
+            <Raiting value={raitingValue} onClick={setRaitingValue}/>
+            <UncontrolledRaiting/>
             {/*<Raiting value={2}/>*/}
             {/*<Raiting value={3}/>*/}
             {/*<Raiting value={4}/>*/}
             {/*<Raiting value={5}/>*/}
-            {/*<Accordion titleValue={"menu"}*/}
-            {/*           collapsed={accordionCollapsed}*/}
-            {/*           onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}/>*/}
+            <Accordion titleValue={"menu"}
+                       collapsed={accordionCollapsed}
+                       onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}/>
             {/*<Accordion titleValue={"user"} collapsed={false}/>*/}
             {/*<OnOff on/>*/}
             {/*<OnOff on/>*/}
             {/*<OnOff on/>*/}
             {/*<OnOff on={false}/>*/}
-            {/*<OnOff on={switchon} onChange={(on)=>{setswitchon(on)}}/>*/}
-            <UncontrolOnOff onChange={setswitchon} /> {switchon.toString()}
+            <OnOff on={switchon} onChange={(on)=>{setswitchon(on)}}/>
+            {/*<UncontrolOnOff onChange={setswitchon} /> {switchon.toString()}*/}
         </div>
 
     );
