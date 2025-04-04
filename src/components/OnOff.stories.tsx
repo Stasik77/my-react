@@ -1,57 +1,30 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
+import {action} from '@storybook/addon-actions';
 
-type PropsType = {
-    on: boolean;
-    onChange: (on: boolean) => void;
+import {OnOff} from './OnOff';
+
+
+export default {
+    title:"OnOff",
+    component:OnOff,
+};
+
+const callBaclk = ()=>{
+    return action("on or off clicked")
 }
 
 
-export function OnOff(props: PropsType) {
-
-    console.log("onOff render")
-
-    // let [on,setOn]=useState(false)
+export const OnMode = ()=><OnOff on={true} onChange={callBaclk}/>
+export const OffMode = ()=><OnOff on={false} onChange={callBaclk}/>
 
 
-    console.log("on:" + props.on)
+export const ModeChanging = ()=> {
 
-    const onStyle = {
-        width: "30px",
-        height: "20px",
-        border: "1px solid black",
-        display: "inline-block",
-        marginLeft: "10px",
-        padding: "2px",
-        backgroundColor: props.on ? "green" : " white"
-    };
-    const offStyle = {
-        width: "30px",
-        height: "20px",
-        border: "1px solid black",
-        display: "inline-block",
-        marginLeft: "5px",
-        padding: "2px",
-        backgroundColor:  props.on ? " white" : " red"
-    };
-    const indicatorStyle = {
-        width: '10px',
-        height: '10px',
-        borderRadius: "5px",
-        border: "1px solid black",
-        display: "inline-block",
-        marginLeft: "10px",
-        backgroundColor:  props.on ? "green" : " white"
-    };
+    let [value, setValue] =useState<boolean>(false)
 
-
-    return (
-
-        <div>
-            <div style={onStyle} onClick={() => {props.onChange(true)}}>On
-            </div>
-            <div style={offStyle} onClick={() =>{props.onChange(false)}}>Off
-            </div>
-            <div style={indicatorStyle}></div>
-        </div>
+    return(
+        <OnOff on={value} onChange={setValue}/>
     )
+
+
 }
