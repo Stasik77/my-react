@@ -6,7 +6,8 @@ import {OnOff} from "./components/OnOff";
 import {UncontrolledAccordion} from "./components/UnontrolerAccordion/UncontrolledAccordion";
 import {UncontrolledRaiting} from "./components/UncontrolledRaiting";
 import {UncontrolOnOff} from './components/UncontrolOnOff';
-import {Select} from './components/UnontrolerAccordion/Select/Select';  //<<< с Помощью AS  можено переименовать Компоненту{Raiting as R}
+import {Select} from './components/UnontrolerAccordion/Select/Select';
+import {Clock} from './components/Clock/Clock';  //<<< с Помощью AS  можено переименовать Компоненту{Raiting as R}
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                        items={[]}
 
             />
+            <Clock/>
 
             <Select value={1}  onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}} items={[]}/>
 
